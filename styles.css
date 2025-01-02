@@ -39,11 +39,12 @@ body {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: relative;
+    position: absolute;
     overflow: hidden;
-    display: inline-flex; /* Чтобы выровнять метку по вертикали */
+    display: inline-block; /* Чтобы выровнять метку по вертикали */
     align-items: center; /* Вертикальное выравнивание содержимого */
     justify-content: center; /* Горизонтальное выравнивание */
+    left: 10px;
   }
   
   .button:hover {
@@ -160,6 +161,7 @@ body {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     border: 1px solid #4CAF50;
+    position: relative;
     width: 90%; /* Задаем ширину в процентах */
     max-width: 1200px; /* Максимальная ширина на больших экранах */
     box-sizing: border-box; /* Важно для корректного расчета ширины с padding и border */
