@@ -1,0 +1,250 @@
+body {
+    background-color: #1a1a1a;
+    color: #e6e6e6;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; /* Добавлено, чтобы элементы выстраивались вертикально */
+    min-height: 100vh;
+  }
+  
+  .container {
+    text-align: center;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  header h1 {
+    color: #4CAF50;
+    margin-bottom: 20px;
+  }
+  
+  .head {
+    margin-bottom: 1px;
+    margin-top: 1px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex; /* Чтобы выровнять метку по вертикали */
+    align-items: center; /* Вертикальное выравнивание содержимого */
+    justify-content: center; /* Горизонтальное выравнивание */
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .button:active {
+    background-color: #3e8e41;
+    transform: scale(0.98);
+  }
+  
+  .button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-45deg);
+    transition: all 0.5s ease;
+  }
+  
+  .button:hover::before {
+    left: 100%;
+  }
+  
+  .button-2 {
+    padding: 10px 20px;
+    margin-left: 70px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex; /* Чтобы выровнять метку по вертикали */
+    align-items: center; /* Вертикальное выравнивание содержимого */
+    justify-content: center; /* Горизонтальное выравнивание */
+  }
+  
+  .button-2:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .button-2:active {
+    background-color: #3e8e41;
+    transform: scale(0.98);
+  }
+  
+  .button-2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-45deg);
+    transition: all 0.5s ease;
+  }
+  
+  .button-2:hover::before {
+    left: 100%;
+  }
+  
+  .highlight_yellow {
+    background-color: yellow;
+    color: black;
+    font-weight: bold;
+  }
+  
+  .new-label {
+    display: inline-block;
+    margin-left: 5px; /* Расстояние от кнопки */
+    padding: 0 10px; /* Отступы внутри метки */
+    font-size: 18px;
+    font-weight: bold;
+    color: #cccccc; /* Серый цвет текста */
+    background-color: transparent; /* Прозрачный фон */
+    border: 1px solid #cccccc; /* Серый ободок */
+    border-radius: 15px; /* Округлённые края */
+    line-height: 1.6; /* Вертикальное выравнивание текста */
+    height: 30px; /* Высота метки совпадает с высотой кнопки */
+    text-align: center;
+  }
+  
+  footer {
+    margin-top: 50px;
+    color: #999;
+  }
+  
+  footer h4 {
+    font-size: 14px;
+  }
+  
+  pre {
+    font-size: 16px; /* Уменьшаем размер шрифта для лучшей читаемости */
+    font-family: monospace; /* Моноширинный шрифт для сохранения форматирования */
+    color: #e0e0e0;
+    background-color: #2c2c2c;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 15px auto; /* Центрирование блока */
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    border: 1px solid #4CAF50;
+    width: 90%; /* Задаем ширину в процентах */
+    max-width: 1200px; /* Максимальная ширина на больших экранах */
+    box-sizing: border-box; /* Важно для корректного расчета ширины с padding и border */
+  }
+  
+  /* Медиазапросы для адаптивности */
+  @media (max-width: 768px) {
+    pre {
+        width: 90%; /* На мобильных устройствах 90% */
+        font-size: 14px;
+        padding: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) { /* Для совсем маленьких экранов */
+    pre {
+        width: 95%; /* Ещё немного уменьшаем ширину */
+    }
+  }
+  
+  pre header {
+    font-size: 28px;
+    font-weight: bold;
+    color: #4CAF50;
+    text-align: center;
+    margin-bottom: 5px;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  pre h2 {
+    font-size: 25px;
+    color: #f5a623;
+    margin-top: 10px;
+  }
+  
+  pre h4 {
+    font-size: 20px;
+    text-align: center;
+    color: #fafafa; /* Updated color */
+    margin: 1px 0;
+  }
+  
+  .button-3 {
+    padding: 10px 20px;
+    max-width: max-content;
+    font-size: 16px;
+    text-decoration: none;
+    color: #ffffff;
+    text-align: center;
+    background-color: #8B0000;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    align-items: center; /* Вертикальное выравнивание содержимого */
+    justify-content: center; /* Горизонтальное выравнивание */
+    margin: 0 auto; /* Центрирование по горизонтали */
+    display: block; /* Делаем элемент блочным, чтобы `margin: auto` работал */
+  }
+  
+  .button-3:hover {
+    background-color: #800000;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+  
+  .button-3:active {
+    background-color: #C71585;
+    transform: scale(0.98);
+  }
+  
+  .button-3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-45deg);
+    transition: all 0.5s ease;
+  }
+  
+  .button-3:hover::before {
+    left: 100%;
+  }
