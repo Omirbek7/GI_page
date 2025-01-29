@@ -30,7 +30,7 @@ body {
 
 @media (max-width: 600px) { /* Для экранов меньше 600px (например, смартфоны) */
     #bannerImage {
-        width: 300px;
+        width: 303px;
         height: 169px;
         border-radius: 8px;
         margin-bottom: 10px;
