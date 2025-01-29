@@ -32,9 +32,10 @@ body {
     #banner {
         padding: 7px;
         width: 88%;
+        max-width: 390px;
     }
     #bannerImage {
-        max-width: 100%;
+        max-width: 80%;
         height: auto;
         border-radius: 8px;
         margin-bottom: 10px;
