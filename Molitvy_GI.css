@@ -41,7 +41,7 @@ body {
         min-width: 340px;
     }
     #bannerImage {
-        min-width: 100vmax;
+        max-width: 100vmin;
         max-height: 30vmax;
         width: 100%;
         height: 100vmax;
