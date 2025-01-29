@@ -67,7 +67,6 @@ function performPray(count) {
             results[4]++; // Насильно добавляем 4*
             results[3]--;
             pity4 = 0; // Сбрасываем счетчик pity4
-            pity5 += 1;
         }
     }
 
