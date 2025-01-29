@@ -32,11 +32,12 @@ body {
     #bannerImage {
         width: 297px;
         height: 169px;
-        border-radius: 4px;
+        border-radius: 8px;
         margin-bottom: 10px;
     }
     #banner {
         padding: 7px;
+        width: 88%;
     }
 }
 
