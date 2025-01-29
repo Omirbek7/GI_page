@@ -1,0 +1,66 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(to bottom right, #FF69B4, #00B7FF);
+}
+
+#banner {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+#bannerImage {
+    width: 900px;
+    height: 507px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 20px;
+}
+
+#banner h1 {
+    margin: 20px 0 10px;
+}
+
+#pray, #pray10 {
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 5px;
+    border: none;
+    border-radius: 10px;
+    background-color: #FFD700;
+    color: #333;
+}
+
+#pray:hover, #pray10:hover {
+    background-color: #FFEC8B;
+}
+
+#result {
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+#stats {
+    margin-top: 20px;
+}
+
+#result.star4 {
+    color: #800080;
+}
+
+#result.star5 {
+    color: #FFD700;
+}
