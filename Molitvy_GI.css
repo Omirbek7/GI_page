@@ -29,9 +29,10 @@ body {
 } */
 
 #bannerImage {
-    width: 100%; /* Делаем ширину адаптивной */
-    max-width: 900px; /* Максимальная ширина */
+    width: 100%; /* Заполняет ширину контейнера */
+    max-width: 900px; /* Ограничение по ширине */
     height: auto; /* Автоматическая высота для сохранения пропорций */
+    aspect-ratio: 16 / 9; /* Пропорции изображения (можно изменить) */
     background-size: cover;
     background-position: center;
     border-radius: 20px 20px 0 0;
