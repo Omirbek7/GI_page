@@ -65,7 +65,9 @@ function performPray(count) {
         if (pity4 === 9 && results[4] === 0 && results[5] === 0) {
 // Повторяем 9-ю молитву с гарантированным 4* или 5*
             results[4]++; // Насильно добавляем 4*
+            results[3]--;
             pity4 = 0; // Сбрасываем счетчик pity4
+            pity5++;
         }
     }
 
