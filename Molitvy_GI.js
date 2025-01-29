@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const banners = [
-        'images/banner_arlechino.jpg',
-        'images/banner_furina.webp',
-        'images/banner_nahida.webp',
-        'images/banner_navia.webp',
-        'images/banner_neuvilette.jpg',
-        'images/benner_shenhe.jpg', 
+        'banner_arlechino.jpg',
+        'banner_furina.webp',
+        'banner_nahida.webp',
+        'banner_navia.webp',
+        'banner_neuvilette.jpg',
+        'benner_shenhe.jpg', 
     ];
     
     // Функция для выбора случайного изображения
