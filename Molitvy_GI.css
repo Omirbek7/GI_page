@@ -29,15 +29,15 @@ body {
 }
 
 @media (max-width: 600px) { /* Для экранов меньше 600px (например, смартфоны) */
-    #bannerImage {
-        width: 306px;
-        height: 169px;
-        border-radius: 8px;
-        margin-bottom: 10px;
-    }
     #banner {
         padding: 7px;
         width: 88%;
+    }
+    #bannerImage {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin-bottom: 10px;
     }
 }
 
