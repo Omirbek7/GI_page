@@ -19,9 +19,19 @@ body {
     box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
 
-#bannerImage {
+/*#bannerImage {
     width: 900px;
     height: 507px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px 20px 0 0;
+    margin-bottom: 20px;
+} */
+
+#bannerImage {
+    width: 100%; /* Делаем ширину адаптивной */
+    max-width: 900px; /* Максимальная ширина */
+    height: auto; /* Автоматическая высота для сохранения пропорций */
     background-size: cover;
     background-position: center;
     border-radius: 20px 20px 0 0;
