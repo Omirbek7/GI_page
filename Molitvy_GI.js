@@ -76,7 +76,6 @@ function performPray(count) {
         if (results[star] > 0) {
             let colorClass = star === 5 ? 'star5' : (star === 4 ? 'star4' : '');
             resultStr += `<span class="${colorClass}">${star}★ (${results[star]} раз)</span>`;
-            if (star > 3) resultStr += ", ";
         }
     }
     resultStr += `</div>`;
