@@ -20,8 +20,10 @@ body {
 }
 
 #bannerImage {
-    width: 900px;
-    height: 507px;
+    max-width: 900px;
+    max-height: 507px;
+    width: 100%;
+    height: 100vmax;
     background-size: cover;
     background-position: center;
     border-radius: 20px 20px 0 0;
@@ -32,11 +34,17 @@ body {
     #banner {
         padding: 7px;
         width: 88%;
-        max-width: 390px;
+        height: 50%;
+        max-width: 590px;
+        max-height: 1000px;
+        min-height: 500px;
+        min-width: 400px;
     }
     #bannerImage {
-        max-width: 80%;
-        height: auto;
+        max-width: 100vmax;
+        max-height: 30vmax;
+        width: 100%;
+        height: 100vmax;
         border-radius: 8px;
         margin-bottom: 10px;
     }
