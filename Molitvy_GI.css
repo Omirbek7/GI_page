@@ -29,14 +29,19 @@ body {
 } */
 
 #bannerImage {
-    width: 100%; /* Заполняет ширину контейнера */
-    max-width: 900px; /* Ограничение по ширине */
-    height: auto; /* Автоматическая высота для сохранения пропорций */
-    aspect-ratio: 16 / 9; /* Пропорции изображения (можно изменить) */
+    width: 900px;
+    height: 507px;
     background-size: cover;
     background-position: center;
     border-radius: 20px 20px 0 0;
     margin-bottom: 20px;
+}
+
+@media (max-width: 600px) { /* Для экранов меньше 600px (например, смартфоны) */
+    #bannerImage {
+        width: 300px;
+        height: 169px;
+    }
 }
 
 #banner h1 {
