@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Характеристики Оружия</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #121212 0%, #1a1a2e 100%); /* Тёмный градиент в стиле Genshin */
+            color: #e0e0e0;
+            margin: 0;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #ffd700; /* Золотой акцент */
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        .weapon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .weapon-card {
+            background-color: #1e1e1e;
+            border-radius: 12px;
+            padding: 20px;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .weapon-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+        }
+        .weapon-title {
+            font-size: 1.8em;
+            color: #ffd700;
+            margin-bottom: 15px;
+            text-align: center;
+            border-bottom: 2px solid #ffd700;
+            padding-bottom: 10px;
+        }
+        .base-stat {
+            font-size: 1.2em;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .sub-stats {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sub-stats li {
+            background-color: #2a2a2a;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #c0c0c0;
+            transition: background-color 0.3s;
+        }
+        .sub-stats li:hover {
+            background-color: #3a3a3a;
+        }
+        .no-sub {
+            color: #888888;
+            text-align: center;
+            font-style: italic;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #888888;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Характеристики Оружия</h1>
+    <div class="weapon-container">
+        <!-- 1* Оружие -->
+        <div class="weapon-card">
+            <div class="weapon-title">1* Оружие</div>
+            <p class="base-stat">Base DMG: 185</p>
+            <ul class="sub-stats">
+                <li class="no-sub">Нет подстатов</li>
+            </ul>
+        </div>
+
+        <!-- 2* Оружие -->
+        <div class="weapon-card">
+            <div class="weapon-title">2* Оружие</div>
+            <p class="base-stat">Base DMG: 243</p>
+            <ul class="sub-stats">
+                <li class="no-sub">Нет подстатов</li>
+            </ul>
+        </div>
+
+        <!-- 3* Тип 1 -->
+        <div class="weapon-card">
+            <div class="weapon-title">3* Тип 1</div>
+            <p class="base-stat">Base DMG: 401</p>
+            <ul class="sub-stats">
+                <li>35.2% HP</li>
+                <li>35.2% DMG</li>
+                <li>46.9% Crit_DMG</li>
+                <li>43.9% DEF</li>
+                <li>43.2% Бонус физического урона</li>
+                <li>23.4% Crit_rate</li>
+                <li>141 Мастерство стихий</li>
+                <li>39% Восстановление энергии</li>
+            </ul>
+        </div>
+
+        <!-- 3* Тип 2 -->
+        <div class="weapon-card">
+            <div class="weapon-title">3* Тип 2</div>
+            <p class="base-stat">Base DMG: 448</p>
+            <ul class="sub-stats">
+                <li>23.4% DMG</li>
+                <li>29.3% DEF</li>
+                <li>31.2% Crit_DMG</li>
+                <li>15.6% Crit_rate</li>
+                <li>94 Мастерство стихий</li>
+            </ul>
+        </div>
+
+        <!-- 3* Тип 3 -->
+        <div class="weapon-card">
+            <div class="weapon-title">3* Тип 3</div>
+            <p class="base-stat">Base DMG: 354</p>
+            <ul class="sub-stats">
+                <li>46.9% HP</li>
+                <li>31.2% Crit_rate</li>
+                <li>187 Мастерство стихий</li>
+                <li>52.1% Восстановление энергии</li>
+            </ul>
+        </div>
+
+        <!-- 4* Тип 1 -->
+        <div class="weapon-card">
+            <div class="weapon-title">4* Тип 1</div>
+            <p class="base-stat">Base DMG: 510</p>
+            <ul class="sub-stats">
+                <li>27.6% Crit_rate</li>
+                <li>55.1% Crit_DMG</li>
+                <li>45.9% Восстановление энергии</li>
+                <li>165 Мастерство стихий</li>
+                <li>41.3% DMG</li>
+                <li>51.7% DEF</li>
+                <li>41.3% HP</li>
+            </ul>
+        </div>
+
+        <!-- 4* Тип 2 -->
+        <div class="weapon-card">
+            <div class="weapon-title">4* Тип 2</div>
+            <p class="base-stat">Base DMG: 565</p>
+            <ul class="sub-stats">
+                <li>18.4% Crit_rate</li>
+                <li>36.8% Crit_DMG</li>
+                <li>30.6% Восстановление энергии</li>
+                <li>110 Мастерство стихий</li>
+                <li>27.6% DMG</li>
+            </ul>
+        </div>
+
+        <!-- 4* Тип 3 -->
+        <div class="weapon-card">
+            <div class="weapon-title">4* Тип 3</div>
+            <p class="base-stat">Base DMG: 454</p>
+            <ul class="sub-stats">
+                <li>36.8% Crit_rate</li>
+                <li>61.3% Восстановление энергии</li>
+                <li>221 Мастерство стихий</li>
+                <li>55.1% DMG</li>
+                <li>69% DEF</li>
+            </ul>
+        </div>
+
+        <!-- 5* Тип 1 -->
+        <div class="weapon-card">
+            <div class="weapon-title">5* Тип 1</div>
+            <p class="base-stat">Base DMG: 608</p>
+            <ul class="sub-stats">
+                <li>55.1% Восстановление энергии</li>
+                <li>33.1% Crit_rate</li>
+                <li>49.6% DMG</li>
+                <li>66.2% Crit_DMG</li>
+                <li>198 Мастерство стихий</li>
+                <li>49.6% HP</li>
+            </ul>
+        </div>
+
+        <!-- 5* Тип 2 -->
+        <div class="weapon-card">
+            <div class="weapon-title">5* Тип 2</div>
+            <p class="base-stat">Base DMG: 741</p>
+            <ul class="sub-stats">
+                <li>11% Crit_rate</li>
+                <li>16.5% DMG</li>
+            </ul>
+        </div>
+
+        <!-- 5* Тип 3 -->
+        <div class="weapon-card">
+            <div class="weapon-title">5* Тип 3</div>
+            <p class="base-stat">Base DMG: 542</p>
+            <ul class="sub-stats">
+                <li>44.1% Crit_rate</li>
+                <li>88.2% Crit_DMG</li>
+                <li>265 Мастерство стихий</li>
+                <li>66.2% HP</li>
+            </ul>
+        </div>
+
+        <!-- 5* Тип 4 -->
+        <div class="weapon-card">
+            <div class="weapon-title">5* Тип 4</div>
+            <p class="base-stat">Base DMG: 674</p>
+            <ul class="sub-stats">
+                <li>36.8% Восстановление энергии</li>
+                <li>22.1% Crit_rate</li>
+                <li>33.1% DMG</li>
+                <li>44.1% Crit_DMG</li>
+            </ul>
+        </div>
+    </div>
+    <footer>Баланс оружия: Чем выше базовый урон, тем меньше значения подстатов. Исследование продолжается.</footer>
+</body>
+</html>
