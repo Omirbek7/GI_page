@@ -1,33 +1,148 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Игра</title>
+    <title>Game</title>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: Arial, sans-serif; }
-        .stats { margin: 10px 0; }
-        #battle-log { max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; }
-        #game-status { font-weight: bold; margin-top: 10px; }
+        body {
+            font-family: 'Ysabeau SC', Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #battle-log {
+            background-color: #E8ECEF; /* Слегка затемнён для контраста */
+            border: 1px solid #ccc;
+            padding: 10px;
+            max-height: 300px;
+            overflow-y: scroll;
+            text-align: left;
+            margin: 0 auto;
+            width: 80%;
+            border-radius: 5px;
+        }
+
+        #battle-log p {
+            margin: 5px 0;
+            color: #333;
+        }
+
+        #player-hp, #enemy-hp {
+            color: #d32f2f;
+        }
+
+        /* Стиль для лунных колец */
+        .lunar-rings {
+            background: linear-gradient(45deg, #0D1B2A, #1B263B, #283845);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            text-shadow: 0 0 5px rgba(65, 90, 119, 0.7), 0 0 10px rgba(65, 90, 119, 0.5);
+            animation: cosmic-glow 3s ease-in-out infinite, gradient-flow 5s ease-in-out infinite;
+            font-weight: 700;
+        }
+
+        @keyframes cosmic-glow {
+            0% { text-shadow: 0 0 5px rgba(65, 90, 119, 0.7), 0 0 10px rgba(65, 90, 119, 0.5); }
+            50% { text-shadow: 0 0 10px rgba(65, 90, 119, 1), 0 0 20px rgba(65, 90, 119, 0.8); }
+            100% { text-shadow: 0 0 5px rgba(65, 90, 119, 0.7), 0 0 10px rgba(65, 90, 119, 0.5); }
+        }
+
+        @keyframes gradient-flow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
     </style>
 </head>
 <body>
-    <h1>Игра</h1>
-    <button id="start-game">Начать игру (легкий уровень)</button>
-    <div class="stats">
-        <h2>Игрок</h2>
-        <p>HP: <span id="player-hp">0</span> / <span id="player-max-hp">0</span></p>
-        <p>Базовый урон: <span id="player-dmg">0</span></p>
-        <p>Защита: <span id="player-defense">0</span>%</p>
+    <h1>Бой</h1>
+    <div id="difficulty-selection" style="display: block;">
+        <h2>Выбери сложность:</h2>
+        <button onclick="startGame('easy')">Лёгкая</button>
+        <button onclick="startGame('medium')">Средняя</button>
+        <button onclick="startGame('hard')">Сложная</button>
     </div>
-    <div class="stats">
-        <h2>Враг</h2>
-        <p>HP: <span id="enemy-hp">0</span> / <span id="enemy-max-hp">0</span></p>
-        <p>Базовый урон: <span id="enemy-dmg">0</span></p>
-        <p>Защита: <span id="enemy-defense">0</span>%</p>
+    <div id="game" style="display: none;">
+        <h2>Игрок HP: <span id="player-hp">0</span> / <span id="player-max-hp">0</span></h2>
+        <p>Урон игрока: <span id="player-dmg">0</span></p>
+        <p>Защита игрока: <span id="player-defense">0%</span> (от максимального HP)</p>
+        <h2>Враг HP: <span id="enemy-hp">0</span> / <span id="enemy-max-hp">0</span></h2>
+        <p>Урон врага: <span id="enemy-dmg">0</span></p>
+        <p>Защита врага: <span id="enemy-defense">0%</span></p>
+        <h3>Лог боя:</h3>
+        <div id="battle-log"></div>
     </div>
-    <h2>Лог боя</h2>
-    <div id="battle-log"></div>
-    <div id="game-status">Ожидание начала...</div>
-    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <script>
+        function startGame(difficulty) {
+            fetch(`/start/${difficulty}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('difficulty-selection').style.display = 'none';
+                    document.getElementById('game').style.display = 'block';
+                    updateGameState();
+                });
+        }
+
+        function updateGameState() {
+            fetch('/game_state')
+                .then(response => response.json())
+                .then(data => {
+                    // Обновление статистики игрока
+                    document.getElementById('player-hp').textContent = data.player_hp;
+                    document.getElementById('player-max-hp').textContent = data.player_max_hp;
+                    document.getElementById('player-dmg').textContent = data.player_dmg;
+                    document.getElementById('player-defense').textContent = data.player_defense + '%';
+                    
+                    // Обновление статистики врага
+                    document.getElementById('enemy-hp').textContent = data.enemy_hp;
+                    document.getElementById('enemy-max-hp').textContent = data.enemy_max_hp;
+                    document.getElementById('enemy-dmg').textContent = data.enemy_dmg;
+                    document.getElementById('enemy-defense').textContent = data.enemy_defense + '%';
+                    
+                    // Обновление лога боя
+                    const logDiv = document.getElementById('battle-log');
+                    logDiv.innerHTML = '';
+                    data.battle_log.forEach(log => {
+                        const p = document.createElement('p');
+                        p.textContent = log;
+                        if (log.includes('лунных колец')) {
+                            p.classList.add('lunar-rings');
+                        }
+                        logDiv.appendChild(p);
+                    });
+                    logDiv.scrollTop = logDiv.scrollHeight; // Автоскролл вниз
+                    
+                    // Проверка состояния игры
+                    if (data.game_running) {
+                        setTimeout(updateGameState, 100); // Обновление каждые 100 мс
+                    } else {
+                        alert("Игра окончена!");
+                    }
+                });
+        }
+    </script>
 </body>
 </html>
