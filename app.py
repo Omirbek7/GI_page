@@ -186,8 +186,8 @@ def battle_loop():
         time.sleep(0.01)
 
 @app.route('/')
-def index():
-    return render_template('index.html')
+def monopoly():
+    return render_template('monopoly.html')
 
 @app.route('/game_state')
 def get_game_state():
@@ -218,4 +218,5 @@ def start_game(difficulty):
     return jsonify({"status": "Game started"})
 
 if __name__ == '__main__':
+
     app.run(debug=True)
