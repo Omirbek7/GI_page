@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Игра</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        .stats { margin: 10px 0; }
+        #battle-log { max-height: 300px; overflow-y: auto; border: 1px solid #ccc; padding: 10px; }
+        #game-status { font-weight: bold; margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Игра</h1>
+    <button id="start-game">Начать игру (легкий уровень)</button>
+    <div class="stats">
+        <h2>Игрок</h2>
+        <p>HP: <span id="player-hp">0</span> / <span id="player-max-hp">0</span></p>
+        <p>Базовый урон: <span id="player-dmg">0</span></p>
+        <p>Защита: <span id="player-defense">0</span>%</p>
+    </div>
+    <div class="stats">
+        <h2>Враг</h2>
+        <p>HP: <span id="enemy-hp">0</span> / <span id="enemy-max-hp">0</span></p>
+        <p>Базовый урон: <span id="enemy-dmg">0</span></p>
+        <p>Защита: <span id="enemy-defense">0</span>%</p>
+    </div>
+    <h2>Лог боя</h2>
+    <div id="battle-log"></div>
+    <div id="game-status">Ожидание начала...</div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
