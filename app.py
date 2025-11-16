@@ -289,7 +289,7 @@ def battle_loop():
 # Главная страница
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('monopoly.html')
 
 # API: состояние игры
 @app.route('/game_state')
@@ -330,3 +330,4 @@ def start_game(difficulty):
 
 if __name__ == '__main__':
     app.run(debug=True)
+
